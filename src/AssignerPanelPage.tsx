@@ -294,15 +294,15 @@ export default function AssignerPanelPage() {
               <div className="text-[13px] font-semibold text-[#111] mb-2">New Project</div>
               <div className="space-y-2">
                 <div>
-                  <label className="block text-[11px] text-[#555] mb-1">Project name</label>
+                  <label className="block text-[11px] font-bold text-[#555] mb-1">Project name</label>
                   <input value={projName} onChange={(e) => setProjName(e.target.value)} placeholder="Enter project name" className="w-full rounded-lg border border-[#c8c8c8] bg-[#f8f8f8] px-3 py-2 text-[12px] text-[#111] outline-none focus:border-[#999]" />
                 </div>
                 <div>
-                  <label className="block text-[11px] text-[#555] mb-1">Description</label>
+                  <label className="block text-[11px] font-bold text-[#555] mb-1">Description</label>
                   <textarea value={projDesc} onChange={(e) => setProjDesc(e.target.value)} placeholder="Brief description..." rows={2} className="w-full rounded-lg border border-[#c8c8c8] bg-[#f8f8f8] px-3 py-2 text-[12px] text-[#111] outline-none resize-none focus:border-[#999]" />
                 </div>
                 <div>
-                  <label className="block text-[11px] text-[#555] mb-1">Status</label>
+                  <label className="block text-[11px] font-bold text-[#555] mb-1">Status</label>
                   <select value={projStatus} onChange={(e) => setProjStatus(e.target.value)} className="w-full rounded-lg border border-[#c8c8c8] bg-[#f8f8f8] px-3 py-2 text-[12px] text-[#111] outline-none focus:border-[#999]">
                     <option>New</option>
                     <option>Designing</option>
@@ -312,7 +312,7 @@ export default function AssignerPanelPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[11px] text-[#555] mb-1">Assign To</label>
+                  <label className="block text-[11px] font-bold text-[#555] mb-1">Assign</label>
                   <select value={projAssignTo} onChange={(e) => setProjAssignTo(e.target.value)} className="w-full rounded-lg border border-[#c8c8c8] bg-[#f8f8f8] px-3 py-2 text-[12px] text-[#111] outline-none focus:border-[#999]">
                     <option value="">Select assignee</option>
                     <option>user@redplanet.com</option>
@@ -321,11 +321,11 @@ export default function AssignerPanelPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[11px] text-[#555] mb-1">Due Date</label>
+                  <label className="block text-[11px] font-bold text-[#555] mb-1">Due Date</label>
                   <input type="date" value={projDueDate} onChange={(e) => setProjDueDate(e.target.value)} className="w-full rounded-lg border border-[#c8c8c8] bg-[#f8f8f8] px-3 py-2 text-[12px] text-[#111] outline-none focus:border-[#999]" />
                 </div>
                 <div>
-                  <label className="block text-[11px] text-[#555] mb-1">Boundary</label>
+                  <label className="block text-[11px] font-bold text-[#555] mb-1">Boundary</label>
                   <div className="rounded-lg border border-dashed border-[#bbb] bg-[#f4f4f4] px-3 py-2 text-[11px] text-[#666] flex items-center gap-2">
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="3" stroke="#888" strokeWidth="1" strokeDasharray="3 2"/><circle cx="1" cy="1" r="1.5" fill="#888"/><circle cx="15" cy="1" r="1.5" fill="#888"/><circle cx="15" cy="15" r="1.5" fill="#888"/><circle cx="1" cy="15" r="1.5" fill="#888"/></svg>
                     Draw a boundary on the map using the draw tool
