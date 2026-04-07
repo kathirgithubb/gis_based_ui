@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 type Attribute = { field: string; value: string };
 type Pole = { id: string; lat: number; lon: number; attributes: Attribute[] };
 type ActiveTab = 'Details' | 'Layers';
-type ExpandedGroups = { Segment: boolean; 'Distribution Structure': boolean; Equipment: boolean };
+type ExpandedGroups = Record<string, boolean>;
 type ProjectTab = 'dashboard' | 'project';
 type BottomRow = {
   key: string; id: string; type: string; status: string; owner: string;
@@ -58,13 +58,18 @@ export default function AssignerPanelPage() {
   const [showProject, setShowProject] = useState(false);
   const [projectTab, setProjectTab] = useState<ProjectTab>('dashboard');
   const [projects, setProjects] = useState<Project[]>([{ name: 'Pole_test', desc: 'Condition of the pole', date: '6/4/2026', status: 'Active' }]);
-  const [assignments, setAssignments] = useState<Assignment[]>([]);
+  const [assignments, _setAssignments] = useState<Assignment[]>([]);
   const [showProjectForm, setShowProjectForm] = useState(false);
   const [projName, setProjName] = useState('');
   const [projDesc, setProjDesc] = useState('');
   const [projAssignTo, setProjAssignTo] = useState('');
   const [projDueDate, setProjDueDate] = useState('');
   const [showUserPopup, setShowUserPopup] = useState(false);
+  const ocGroups: { key: string; items: string[] }[] = [
+    { key: 'Segment', items: ['Segment 1', 'Segment 2', 'Segment 3'] },
+    { key: 'Distribution Structure', items: ['DS 1', 'DS 2'] },
+    { key: 'Equipment', items: ['Eq 1', 'Eq 2', 'Eq 3'] },
+  ];
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 640);

@@ -7,7 +7,7 @@ import AdminPage from './AdminPage';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/gis_based_ui/">
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/map" element={<GISMap />} />

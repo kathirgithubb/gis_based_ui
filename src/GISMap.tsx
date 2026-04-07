@@ -137,7 +137,7 @@ export default function GISUiResponsiveV4() {
   const [tableFilterMode, setTableFilterMode] = useState('By ID');
   const [tableFilterInput, setTableFilterInput] = useState('');
   const [appliedTableFilter, setAppliedTableFilter] = useState('');
-  const [compassAngle, setCompassAngle] = useState(0);
+  const [compassAngle, _setCompassAngle] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
