@@ -62,6 +62,7 @@ export default function AssignerPanelPage() {
   const [showProjectForm, setShowProjectForm] = useState(false);
   const [projName, setProjName] = useState('');
   const [projDesc, setProjDesc] = useState('');
+  const [projStatus, setProjStatus] = useState('New');
   const [projAssignTo, setProjAssignTo] = useState('');
   const [projDueDate, setProjDueDate] = useState('');
   const [showUserPopup, setShowUserPopup] = useState(false);
@@ -177,8 +178,8 @@ export default function AssignerPanelPage() {
   const saveProject = () => {
     if (!projName.trim()) return;
     const today = new Date().toLocaleDateString('en-US');
-    setProjects((prev) => [...prev, { name: projName.trim(), desc: projDesc.trim(), date: today, status: 'Active', assignTo: projAssignTo, dueDate: projDueDate }]);
-    setProjName(''); setProjDesc(''); setProjAssignTo(''); setProjDueDate(''); setShowProjectForm(false);
+    setProjects((prev) => [...prev, { name: projName.trim(), desc: projDesc.trim(), date: today, status: projStatus, assignTo: projAssignTo, dueDate: projDueDate }]);
+    setProjName(''); setProjDesc(''); setProjStatus('New'); setProjAssignTo(''); setProjDueDate(''); setShowProjectForm(false);
   };
 
   // Desktop layout
@@ -301,6 +302,16 @@ export default function AssignerPanelPage() {
                   <textarea value={projDesc} onChange={(e) => setProjDesc(e.target.value)} placeholder="Brief description..." rows={2} className="w-full rounded-lg border border-[#c8c8c8] bg-[#f8f8f8] px-3 py-2 text-[12px] text-[#111] outline-none resize-none focus:border-[#999]" />
                 </div>
                 <div>
+                  <label className="block text-[11px] text-[#555] mb-1">Status</label>
+                  <select value={projStatus} onChange={(e) => setProjStatus(e.target.value)} className="w-full rounded-lg border border-[#c8c8c8] bg-[#f8f8f8] px-3 py-2 text-[12px] text-[#111] outline-none focus:border-[#999]">
+                    <option>New</option>
+                    <option>Designing</option>
+                    <option>Awaiting Approval</option>
+                    <option>Approved</option>
+                    <option>Complete</option>
+                  </select>
+                </div>
+                <div>
                   <label className="block text-[11px] text-[#555] mb-1">Assign To</label>
                   <select value={projAssignTo} onChange={(e) => setProjAssignTo(e.target.value)} className="w-full rounded-lg border border-[#c8c8c8] bg-[#f8f8f8] px-3 py-2 text-[12px] text-[#111] outline-none focus:border-[#999]">
                     <option value="">Select assignee</option>
@@ -321,7 +332,7 @@ export default function AssignerPanelPage() {
                   </div>
                 </div>
                 <div className="flex justify-end gap-2 pt-1">
-                  <button type="button" onClick={() => { setProjName(''); setProjDesc(''); setProjAssignTo(''); setProjDueDate(''); setShowProjectForm(false); }} className={`${gb} rounded-lg px-3 py-2 text-[12px] font-medium`}>Clear</button>
+                  <button type="button" onClick={() => { setProjName(''); setProjDesc(''); setProjStatus('New'); setProjAssignTo(''); setProjDueDate(''); setShowProjectForm(false); }} className={`${gb} rounded-lg px-3 py-2 text-[12px] font-medium`}>Clear</button>
                   <button type="button" onClick={saveProject} className={`${pb} rounded-lg px-3 py-2 text-[12px] font-semibold`}>Save project</button>
                 </div>
               </div>
