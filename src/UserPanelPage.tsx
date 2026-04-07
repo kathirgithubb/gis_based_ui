@@ -408,9 +408,9 @@ export default function UserPanelPage() {
           {showUserPopup && (
             <div className="absolute right-0 top-[calc(100%+6px)] z-[70] w-[210px] overflow-hidden rounded-xl border border-[#c8c8c8] bg-white shadow-xl">
               <div className="flex items-center gap-2.5 px-3 py-3 border-b border-[#eee]">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2563eb] text-white text-[13px] font-bold select-none">U</div>
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#37353E] text-white text-[13px] font-bold select-none">U</div>
                 <div className="min-w-0">
-                  <div className="truncate text-[12px] font-semibold text-[#111]">Field User</div>
+                  <div className="truncate text-[12px] font-semibold text-[#111]">User</div>
                   <div className="truncate text-[10px] text-[#888]">user@redplanet.com</div>
                 </div>
               </div>
