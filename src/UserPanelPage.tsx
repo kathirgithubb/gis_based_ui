@@ -265,7 +265,7 @@ export default function UserPanelPage() {
           <button type="button"
             className="w-full rounded-lg bg-black hover:bg-gray-800 text-white py-2 text-[12px] font-semibold transition-colors"
             onClick={() => { leafletMapRef.current?.setView([14.5943, 121.1866], 13); setShowProject(false); }}>
-            Open Map
+            GoTo Project
           </button>
         </div>
       ))}

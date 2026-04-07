@@ -344,7 +344,7 @@ export default function AssignerPanelPage() {
                 {p.dueDate && <span className="text-[11px] text-[#888]">Due: {p.dueDate}</span>}
                 <span className="text-[11px] font-medium text-green-600">Boundary defined</span>
               </div>
-              <button type="button" className="w-full rounded-lg bg-black hover:bg-gray-800 text-white py-2 text-[12px] font-semibold transition-colors" onClick={() => leafletMapRef.current?.setView([14.5943, 121.1866], 13)}>Open Map</button>
+              <button type="button" className="w-full rounded-lg bg-black hover:bg-gray-800 text-white py-2 text-[12px] font-semibold transition-colors" onClick={() => leafletMapRef.current?.setView([14.5943, 121.1866], 13)}>GoTo Project</button>
             </div>
           ))}
         </div>
